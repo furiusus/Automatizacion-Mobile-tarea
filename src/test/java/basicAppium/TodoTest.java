@@ -69,7 +69,7 @@ public class TodoTest {
         driver.findElement(By.xpath("//android.widget.TextView[@content-desc='Guardar']")).click();
         Thread.sleep(1000);
 
-        String expectedResult="Keilita";
+        String expectedResult="Hola";
         String actualResult=driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.vrproductiveapps.whendo:id/home_list_item_text']")).getText();
         Assertions.assertEquals(expectedResult,actualResult,"ERROR! la nota no fue creado");
 
