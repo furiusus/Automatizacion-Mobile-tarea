@@ -33,13 +33,13 @@ public class TodoTest {
 
     @Test
     public void TodoManagerTest() throws InterruptedException {
-       //Agregar lista
+        //Agregar lista
         driver.findElement(By.id("com.vrproductiveapps.whendo:id/fab")).click();
-       //seleccionar opciones
+        //seleccionar opciones
         driver.findElement(By.id("com.vrproductiveapps.whendo:id/note_item_reminder")).click();
-       //Seleccionar limite
+        //Seleccionar limite
         driver.findElement(By.id("com.vrproductiveapps.whendo:id/due_date")).click();
-       //Fijar limite de fecha
+        //Fijar limite de fecha
         driver.findElement(By.xpath("//android.view.View[@text='20']")).click();
         //Boton aceptar limite
         driver.findElement(By.id("android:id/button1")).click();
@@ -54,8 +54,8 @@ public class TodoTest {
         //Seleccionar recordatorio
         //driver.findElement(By.xpath("//android.widget.TextView[@resource-id='com.vrproductiveapps.whendo:id/reminder']")).click();
         // Fijar recordatorio
-       // Thread.sleep(3000);
-       // driver.findElement(By.xpath("//android.widget.RadioButton[@text='A Tiempo']")).click();
+        // Thread.sleep(3000);
+        // driver.findElement(By.xpath("//android.widget.RadioButton[@text='A Tiempo']")).click();
         //Thread.sleep(3000);
         //Seleccionar Repetir
         //driver.findElement(By.id("com.vrproductiveapps.whendo:id/repeat")).click();

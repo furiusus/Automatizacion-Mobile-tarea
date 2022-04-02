@@ -1,4 +1,3 @@
-
 package basicAppium;
 
 import io.appium.java_client.AppiumDriver;
@@ -13,7 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class basicAppium {
+public class BasicAppium {
 
     private AppiumDriver driver;
     @BeforeEach
@@ -39,17 +38,17 @@ public class basicAppium {
     @Test
     public void calculatorTest() throws InterruptedException {
         // button 8
-        driver.findElement(By.id("com.sec.android.app.popupcalculator:id/calc_keypad_btn_08")).click();
+        driver.findElement(By.id("com.android.calculator2:id/digit_8")).click();
         //  button +
-        driver.findElement(By.id("com.sec.android.app.popupcalculator:id/calc_keypad_btn_add")).click();
+        driver.findElement(By.id("com.android.calculator2:id/op_add")).click();
         // button 1
-        driver.findElement(By.id("com.sec.android.app.popupcalculator:id/calc_keypad_btn_01")).click();
+        driver.findElement(By.id("com.android.calculator2:id/digit_1")).click();
         // button =
-        driver.findElement(By.id("com.sec.android.app.popupcalculator:id/calc_keypad_btn_equal")).click();
+        driver.findElement(By.id("com.android.calculator2:id/eq")).click();
         // verificacion de resultado
         Thread.sleep(5000);
 
-        String resultadoActual=driver.findElement(By.id("com.sec.android.app.popupcalculator:id/calc_edt_formula")).getText();
+        String resultadoActual=driver.findElement(By.id("com.android.calculator2:id/formula")).getText();
         String resultadoEsperado="9";
         Assertions.assertEquals(resultadoEsperado,resultadoActual,"ERROR!!! la suma es incorrecta");
     }

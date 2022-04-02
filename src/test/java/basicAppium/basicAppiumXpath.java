@@ -13,7 +13,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-public class basicAppiumXpath {
+public class BasicAppiumXpath {
 
     private AppiumDriver driver;
     @BeforeEach
@@ -25,8 +25,10 @@ public class basicAppiumXpath {
         capabilities.setCapability("appActivity",".Calculator");
         capabilities.setCapability("platformName","Android");
 
+
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+        // implicit wait
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
 
     }
 
@@ -41,16 +43,16 @@ public class basicAppiumXpath {
         // button 8
         driver.findElement(By.xpath("//android.widget.Button[@text='8']")).click();
         //  button +
-        driver.findElement(By.xpath("//android.widget.Button[@content-desc='Menos']")).click();
+        driver.findElement(By.xpath("//android.widget.ImageView[@content-desc='plus']")).click();
         // button 1
         driver.findElement(By.xpath("//android.widget.Button[@text='1']")).click();
         // button =
-        driver.findElement(By.xpath("//android.widget.Button[@content-desc='Igual']")).click();
+        driver.findElement(By.xpath("//android.widget.ImageView[@content-desc='equals']")).click();
         // verificacion de resultado
         Thread.sleep(5000);
 
-        String resultadoActual=driver.findElement(By.xpath("//android.view.View[@resource-id='com.sec.android.app.popupcalculator:id/calc_edt_formula']")).getText();
-        String resultadoEsperado="7";
-        Assertions.assertEquals(resultadoEsperado,resultadoActual,"ERROR!!! la resta es incorrecta");
+        String resultadoActual=driver.findElement(By.xpath("//android.widget.EditText[@resource-id='com.android.calculator2:id/formula']")).getText();
+        String resultadoEsperado="9";
+        Assertions.assertEquals(resultadoEsperado,resultadoActual,"ERROR!!! la suma es incorrecta");
     }
 }
